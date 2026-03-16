@@ -2,13 +2,13 @@ import 'package:clean_arch_database/core/database/tables/habits_table.dart';
 
 class HabitModel {
   final String id;
-  final String name;
+  final String? name;
   final String title;
   final DateTime createdAt;
 
   HabitModel({
     required this.id,
-    required this.name,
+    this.name,
     required this.createdAt,
     required this.title,
   });
