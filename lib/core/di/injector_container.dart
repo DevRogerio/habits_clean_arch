@@ -6,6 +6,7 @@ import 'package:clean_arch_database/features/habits/domain/use_cases/delete_habi
 import 'package:clean_arch_database/features/habits/domain/use_cases/get_habits_usecase.dart';
 import 'package:clean_arch_database/features/habits/domain/use_cases/insert_habits_usecase.dart';
 import 'package:clean_arch_database/features/habits/domain/use_cases/update_habits_usecase.dart';
+import 'package:clean_arch_database/features/habits/presentation/cubit/delete_habits_cubit.dart';
 import 'package:clean_arch_database/features/habits/presentation/cubit/habits_cubit.dart';
 import 'package:get_it/get_it.dart';
 

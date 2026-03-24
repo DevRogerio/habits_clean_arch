@@ -5,7 +5,12 @@ import 'package:flutter/widgets.dart';
 
 class ListHabitsWidget extends StatelessWidget {
   final List<HabitModel> habits;
-  const ListHabitsWidget({super.key, required this.habits});
+  final void Function() onDeleteCubit;
+  const ListHabitsWidget({
+    super.key,
+    required this.habits,
+    required this.onDeleteCubit,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +18,7 @@ class ListHabitsWidget extends StatelessWidget {
       itemCount: habits.length,
       itemBuilder: (context, index) {
         final habit = habits[index];
-        return HabitCard(habit: habit);
+        return HabitCard(habit: habit, onDeleteCubit: onDeleteCubit);
       },
     );
   }
