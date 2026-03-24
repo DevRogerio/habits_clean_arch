@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:clean_arch_database/core/di/injector_container.dart';
+import 'package:clean_arch_database/core/routes/routes.dart';
 import 'package:clean_arch_database/features/habits/presentation/cubit/delete_habits_cubit.dart';
 import 'package:clean_arch_database/features/habits/presentation/cubit/delete_habits_state.dart';
 import 'package:clean_arch_database/features/habits/presentation/cubit/habits_cubit.dart';
@@ -11,6 +12,7 @@ import 'package:clean_arch_database/features/habits/presentation/widgets/list_ha
 import 'package:clean_arch_database/features/habits/presentation/widgets/loading_habits_view_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class HabitsPage extends StatefulWidget {
   const HabitsPage({super.key});
@@ -45,9 +47,9 @@ class _HabitsPageState extends State<HabitsPage> {
             }
             return ListHabitsWidget(
               habits: state.habits,
-              //  onDeleteCubit: () {
-              //    habitsCubit.getHabits();
-              //  },
+              onDeleteCubit: () {
+                habitsCubit.getHabits();
+              },
             );
           }
           if (state is HabitsError) {
@@ -58,7 +60,7 @@ class _HabitsPageState extends State<HabitsPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // context.push(AppRoutes.createHabit);
+          context.push(AppRoutes.createHabit);
         },
         child: Icon(Icons.add),
       ),
